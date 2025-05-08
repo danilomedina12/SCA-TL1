@@ -7,5 +7,6 @@
 
 #define TEMP_OBJETIVO   50    // Temperatura objetivo en °C
 #define TEMP_HISTERESIS 5     // Margen de histéresis
+#define TIEMPO_MUESTREO 2500  // Tiempo entre muestras (en milisegundos)
 
 #endif

@@ -13,12 +13,13 @@ struct TemperaturaDatos {
   bool          ActuadorEncendido;
 };
 
-extern TemperaturaDatos tempDatos;
+//extern TemperaturaDatos tempDatos;
 
 // Declaración de funciones
 void TemperaturaInicializar();
+void TemperaturaMedir();
 void TemperaturaControlar(float temperaturaDeseada);
-void TemperaturaLeer(TemperaturaDatos &datos);
+void TemperaturaLeer(TemperaturaDatos * datos);
 void TemperaturaParar();
 
 #endif

@@ -29,25 +29,25 @@ void TemperaturaLeer(TemperaturaDatos &datos) {
 }
 
 void TemperaturaControlar(float temperaturaDeseada) {
-  sensorDS18B20.requestTemperatures();  // Solicita nuevamente la temperatura
+/*  sensorDS18B20.requestTemperatures();  // Solicita nuevamente la temperatura
  
   float tempActual = sensorDS18B20.getTempCByIndex(0);  // Obtiene la temperatura actual
-  float tempAmbiente = sensorDS18B20.getTempCByIndex(1);
+  float tempAmbiente = sensorDS18B20.getTempCByIndex(1);*/
 
-  // Compara la temperatura actual con la deseada y controla el relé
-  if (tempActual < temperaturaDeseada - TEMP_HISTERESIS) {
+  // Compara la temperatura medida actual con la deseada y controla el relé
+  if (tempDatos.TemperaturaMedida < temperaturaDeseada - TEMP_HISTERESIS) {
     digitalWrite(RELAY_PIN, HIGH);  // Enciende el relé
     tempDatos.ActuadorEncendido = true;
-  } else if (tempActual >= temperaturaDeseada + TEMP_HISTERESIS) {
+  } else if (tempDatos.TemperaturaMedida >= temperaturaDeseada + TEMP_HISTERESIS) {
     digitalWrite(RELAY_PIN, LOW);  // Apaga el relé
     tempDatos.ActuadorEncendido = false;
   }
 
   // Actualiza los datos de la estructura
-  tempDatos.TemperaturaMedida = tempActual;
+/*  tempDatos.TemperaturaMedida = tempActual;
   tempDatos.TemperaturaAmbiente = tempAmbiente;
   tempDatos.TiempoMedicion = millis();
-  tempDatos.HuboMedicion = true;
+  tempDatos.HuboMedicion = true;*/
 }
 
 void TemperaturaParar() {

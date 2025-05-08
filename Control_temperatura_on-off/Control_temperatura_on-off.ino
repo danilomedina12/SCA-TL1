@@ -16,8 +16,8 @@ void loop() {
   if (paradaDeEmergencia == HIGH) {
     TemperaturaParar(); 
   } else {
-    TemperaturaControlar(TEMP_OBJETIVO);  
     TemperaturaLeer(tempDatos); 
+    TemperaturaControlar(TEMP_OBJETIVO);  
     ImprimirDatos(tempDatos);
   }
 

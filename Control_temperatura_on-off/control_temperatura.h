@@ -1,4 +1,4 @@
-// Acá van las declaraciones necesarias para que el módulo principal funcione
+// control_temperatura.h
 
 #ifndef CONTROL_TEMPERATURA_H
 #define CONTROL_TEMPERATURA_H

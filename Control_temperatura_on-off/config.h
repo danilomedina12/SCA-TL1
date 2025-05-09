@@ -1,3 +1,4 @@
+// config.h
 #ifndef CONFIG_H
 #define CONFIG_H
 
@@ -9,4 +10,4 @@
 #define TEMP_HISTERESIS 5     // Margen de histéresis
 #define TIEMPO_MUESTREO 2500  // Tiempo entre muestras (en milisegundos)
 
-#endif
+#endif  

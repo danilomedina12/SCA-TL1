@@ -21,7 +21,6 @@ void loop() {
   tiempoActual = millis(); // actualiza el tiempo actual
 
   if (paradaDeEmergencia == HIGH) {
-    TemperaturaParar(); 
     ApagarTodo();// llamar a otra función definida en este módulo
 
   } else {

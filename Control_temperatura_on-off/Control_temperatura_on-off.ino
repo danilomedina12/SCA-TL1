@@ -71,6 +71,7 @@ void ImprimirDatos() {
 
 void ApagarTodo() {
   Serial.println("SISTEMA APAGADO. REINICIAR PARA CONTINUAR.");
+  TemperaturaParar();
   while (true) {
     // loop infinito controlado para que el sistema quede apagado
   }

@@ -24,8 +24,8 @@ void TemperaturaInicializar() {
 
 void TemperaturaMedir() {
   sensorDS18B20.requestTemperatures();
-  tempDatos.TemperaturaMedida = sensorDS18B20.getTempCByIndex(0);
-  tempDatos.TemperaturaAmbiente = sensorDS18B20.getTempCByIndex(1);
+  tempDatos.TemperaturaAmbiente = sensorDS18B20.getTempCByIndex(0);
+  tempDatos.TemperaturaMedida = sensorDS18B20.getTempCByIndex(1);
   tempDatos.TiempoMedicion = millis();
   tempDatos.HuboMedicion = true;
 }
@@ -49,6 +49,7 @@ void TemperaturaLeer(TemperaturaDatos * DATOS)
   DATOS->TemperaturaAmbiente = tempDatos.TemperaturaAmbiente;
   DATOS->TiempoMedicion      = tempDatos.TiempoMedicion;
   DATOS->HuboMedicion        = tempDatos.HuboMedicion;
+  DATOS->ActuadorEncendido   = tempDatos.ActuadorEncendido;
 }
 
 void TemperaturaParar() {

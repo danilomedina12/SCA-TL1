@@ -26,12 +26,13 @@ void loop() {
   } else {
     // esto debe hacerse cada un tiempo determinado
     if(tiempoActual - tiempoUltimaMedicion >= TIEMPO_MUESTREO){
-      tiempoUltimaMedicion = tiempoActual;
+     
 
       TemperaturaMedir();
       TemperaturaControlar(TEMP_OBJETIVO); // mide, controla, y gurda datos
       TemperaturaLeer(&DatosLeidos);          // lee datos guardados
       ImprimirDatos();
+      tiempoUltimaMedicion += TIEMPO_MUESTREO;
     }
   }
 }
@@ -59,13 +60,14 @@ void ImprimirDatos() {
 
   unsigned long tiempoEnSegundos = DatosLeidos.TiempoMedicion / 1000;
 
-  Serial.print(tiempoEnSegundos);
+  Serial.print(tiempoUltimaMedicion/1000);
   Serial.print("\t");
   Serial.print(DatosLeidos.TemperaturaAmbiente, 2);
   Serial.print("\t");
   Serial.print(DatosLeidos.TemperaturaMedida, 2);
   Serial.print("\t");
-  Serial.println(DatosLeidos.ActuadorEncendido ? "SI" : "NO");
+  Serial.println(DatosLeidos.ActuadorEncendido  ? "SI" : "NO");
+
 }
 
 void ApagarTodo() {
@@ -75,4 +77,3 @@ void ApagarTodo() {
     // loop infinito controlado para que el sistema quede apagado
   }
 }
-

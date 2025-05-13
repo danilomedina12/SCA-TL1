@@ -7,7 +7,7 @@
 #define STOPBUTTON_PIN  10    // Pin del botón de parada
 
 #define TEMP_OBJETIVO   50    // Temperatura objetivo en °C
-#define TEMP_HISTERESIS 5     // Margen de histéresis
-#define TIEMPO_MUESTREO 2500  // Tiempo entre muestras (en milisegundos)
+#define TEMP_HISTERESIS 1     // Margen de histéresis
+#define TIEMPO_MUESTREO 5000  // Tiempo entre muestras (en milisegundos)
 
 #endif  
